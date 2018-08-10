@@ -20,8 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.billAmountTextField.keyboardType = UIKeyboardTypeDefault;
-    self.tipPercentageTextField.keyboardType = UIKeyboardTypeDefault;
+    self.billAmountTextField.keyboardType = UIKeyboardTypeNumberPad;
+    self.tipPercentageTextField.keyboardType = UIKeyboardTypeNumberPad;
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -37,9 +37,9 @@
     float percentTip = [self.tipPercentageTextField.text intValue];
     float tipAmount = billAmount * (percentTip/100);
     float totalAmount = billAmount + tipAmount;
-    NSString *tipString = [NSString stringWithFormat:@"$%.02f", tipAmount];
+    NSString *tipString = [NSString stringWithFormat:@"Tip Amount: $%.02f", tipAmount];
     self.tipAmountLabel.text =  tipString;
-    NSString *totalString = [NSString stringWithFormat:@"$%.02f", totalAmount];
+    NSString *totalString = [NSString stringWithFormat:@"Total Bill Amount: $%.02f", totalAmount];
     self.totalAmountLabel.text = totalString;
    
 
